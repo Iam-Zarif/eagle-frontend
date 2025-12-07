@@ -24,7 +24,7 @@ It will run into http://localhost:5173
   npm run dev
 ```
 
-You may get APi import error, To find solution read given [Document](https://docs.google.com/document/d/1BrRQEW70vh8H2BXnjfpmpRC0yymbD49njfy26QobwQs/edit?tab=t.0).
+You may get APi import error as the Api was not disclosed, To find solution read given [Document](https://docs.google.com/document/d/1BrRQEW70vh8H2BXnjfpmpRC0yymbD49njfy26QobwQs/edit?tab=t.0).
 Do not run into Incognito
 Please visit it with career@eagle3dstreaming.com
 
