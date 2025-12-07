@@ -39,7 +39,6 @@ To run this project, you will need to add the following environment variables to
 `api` - folder
 
 
-Here’s a short, clean syntax version for your README:
 
 ---
 
