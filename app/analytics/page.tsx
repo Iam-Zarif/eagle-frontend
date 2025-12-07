@@ -14,14 +14,14 @@ import { BarChart, Bar, CartesianGrid, XAxis, Cell } from "recharts";
 
 export default function AnalyticsPage() {
   const products = useProducts();
-const last10Products = products.slice(-10);
+  const last10Products = products.slice(-10);
 
-const stockChartData = Array.from({ length: 10 }).map((_, i) => {
-  const product = last10Products[i - (10 - last10Products.length)];
-  return product
-    ? { name: product.name, stock: product.quantity }
-    : { name: "", stock: 0 };
-});
+  const stockChartData = Array.from({ length: 10 }).map((_, i) => {
+    const product = last10Products[i - (10 - last10Products.length)];
+    return product
+      ? { name: product.name, stock: product.quantity }
+      : { name: "", stock: 0 };
+  });
 
   if (!products) {
     return (
@@ -30,8 +30,6 @@ const stockChartData = Array.from({ length: 10 }).map((_, i) => {
       </div>
     );
   }
-
-
 
   const stockChartConfig = {
     stock: {
@@ -53,8 +51,10 @@ const stockChartData = Array.from({ length: 10 }).map((_, i) => {
   } satisfies ChartConfig;
 
   return (
-    <div className="p-6 lg:p-10 max-w-7xl mx-auto space-y-8">
-      <h1 className="text-3xl font-bold text-gray-100">Product Analytics</h1>
+    <div className="p-4 lg:p-10 max-w-7xl mx-auto space-y-8">
+      <h1 className="text-xl lg:text-3xl font-semibold lg:font-bold text-gray-100">
+        Product Analytics
+      </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card className="bg-gray-900/50 border border-gray-700 rounded-xl">
@@ -78,12 +78,11 @@ const stockChartData = Array.from({ length: 10 }).map((_, i) => {
                     <Cell
                       key={index}
                       fill="var(--color-stock)"
-                      onMouseOver={
-                        (e) =>
-                          (e.target as SVGRectElement).setAttribute(
-                            "fill",
-                            "#6366f1"
-                          )
+                      onMouseOver={(e) =>
+                        (e.target as SVGRectElement).setAttribute(
+                          "fill",
+                          "#6366f1"
+                        )
                       }
                       onMouseOut={(e) =>
                         (e.target as SVGRectElement).setAttribute(

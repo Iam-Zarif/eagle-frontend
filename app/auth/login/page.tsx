@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
   CardContent,
-  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -118,9 +117,6 @@ export default function LoginPage() {
             </Button>
           </form>
         </CardContent>
-        <CardFooter className="text-center text-gray-400 text-sm mt-2">
-          &copy; 2025 Eagle 3D Streaming
-        </CardFooter>
       </Card>
     </div>
   );

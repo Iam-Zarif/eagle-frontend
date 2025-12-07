@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { ProductsTable } from "@/components/reUsable/ProductsTable";
 import { AddProductModal } from "@/components/reUsable/AddProductModal";
 import { toast, Toaster } from "sonner";
+import { ArrowRight } from "lucide-react";
 
 export default function ProductsPage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -89,7 +90,9 @@ export default function ProductsPage() {
       <Toaster />
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
         <div className="flex items-center gap-2">
-          <h1 className="text-xl lg:text-3xl font-semibold lg:font-bold text-gray-100">Products</h1>
+          <h1 className="text-xl lg:text-3xl font-semibold lg:font-bold text-gray-100">
+            Products
+          </h1>
           <span className="text-gray-400 lg:text-xl">
             (Total: {products.length})
           </span>
@@ -98,6 +101,11 @@ export default function ProductsPage() {
           Add Product
         </Button>
       </div>
+      {products.length > 0 && (
+        <p className="flex text-gray-400 text-sm font-light my-3 animate-pulse md:hidden items-center gap-1">
+          Scroll <ArrowRight size={16} />
+        </p>
+      )}
 
       <ProductsTable
         products={products}

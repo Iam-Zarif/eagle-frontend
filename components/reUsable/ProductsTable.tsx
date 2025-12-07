@@ -142,7 +142,7 @@ export function ProductsTable({
 
   return (
     <>
-      <Card className="bg-gray-900/50 rounded-xl border py-0 border-gray-700 overflow-x-auto">
+      <Card className="bg-gray-900/50 rounded-xl border py-0 border-gray-700  overflow-x-auto">
         <CardContent className="p-0">
           <table className="w-full text-sm text-gray-300 border-collapse">
             <thead className="bg-gray-800/60 text-gray-400">
