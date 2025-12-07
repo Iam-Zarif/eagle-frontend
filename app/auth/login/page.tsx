@@ -61,7 +61,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen md:p-6">
+    <div className="flex items-center justify-center pt-20 lg:pt-0 lg:min-h-screen md:p-6">
       <Toaster />
       <Card className="w-full px-4 md:px-0 md:max-w-md bg-transparent md:bg-gray-900/90 text-gray-100 rounded-xl border-0 md:border md:border-gray-700/40 shadow-lg">
         <CardHeader className="mb-4">
