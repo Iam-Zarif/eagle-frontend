@@ -61,9 +61,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen lg:p-6">
+    <div className="flex items-center justify-center min-h-screen md:p-6">
       <Toaster />
-      <Card className="w-full px-4 lg:px-0 lg:max-w-md bg-transparent lg:bg-gray-900/90 text-gray-100 rounded-xl border-0 lg:border lg:border-gray-700/40 shadow-lg">
+      <Card className="w-full px-4 md:px-0 md:max-w-md bg-transparent md:bg-gray-900/90 text-gray-100 rounded-xl border-0 md:border md:border-gray-700/40 shadow-lg">
         <CardHeader className="mb-4">
           <CardTitle className="text-2xl text-center font-semibold">
             Login
@@ -77,7 +77,7 @@ export default function LoginPage() {
                 id="username"
                 placeholder="Enter your username"
                 {...register("username", { required: "Username is required" })}
-                className="bg-gray-800/70 text-gray-100 border border-gray-600 lg:py-5 placeholder-gray-400 focus:border-indigo-500 mt-2 focus:ring-indigo-500 transition"
+                className="bg-gray-800/70 text-gray-100 border border-gray-600 md:py-5 placeholder-gray-400 focus:border-indigo-500 mt-2 focus:ring-indigo-500 transition"
               />
               {errors.username && (
                 <p className="text-red-400 text-sm">

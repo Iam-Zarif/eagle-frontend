@@ -2,7 +2,7 @@
 
 import { ReactNode, useEffect, useState } from "react";
 import { Provider, useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { store, AppDispatch, RootState } from "@/store/store";
 import { fetchProfile } from "@/store/slices/authSlice";
 
@@ -13,23 +13,36 @@ interface Props {
 function InnerProfileProvider({ children }: Props) {
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+  const pathname = usePathname();
   const { user, loading } = useSelector((state: RootState) => state.auth);
 
   const [profileChecked, setProfileChecked] = useState(false);
 
+  const isAuthPage = pathname.startsWith("/auth");
+
   useEffect(() => {
     const restoreUser = async () => {
-      await dispatch(fetchProfile());
-      setProfileChecked(true);
+      try {
+        await dispatch(fetchProfile()).unwrap();
+      } catch {
+      } finally {
+        setProfileChecked(true);
+      }
     };
     restoreUser();
   }, [dispatch]);
 
   useEffect(() => {
-    if (profileChecked && !user) {
-      router.replace("/auth/login"); 
+    if (!profileChecked) return;
+
+    if (!user && !isAuthPage) {
+      router.replace("/auth/login");
     }
-  }, [user, profileChecked, router]);
+
+    if (user && isAuthPage) {
+      router.replace("/");
+    }
+  }, [user, profileChecked, isAuthPage, router]);
 
   if (!profileChecked || loading) return null;
 
