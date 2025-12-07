@@ -24,7 +24,8 @@ It will run into http://localhost:5173
   npm run dev
 ```
 
-You may get APi import error, To find solution read given document
+You may get APi import error, To find solution read given document.
+Do not run into Incognito
 
 
 ## Environment Variables
