@@ -27,6 +27,10 @@ It will run into http://localhost:5173
 You may get APi import error, To find solution read given document.
 Do not run into Incognito
 
+## Cridentials
+
+Username: user
+Password: 123456
 
 ## Environment Variables
 
