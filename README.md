@@ -19,6 +19,7 @@ It will run into http://localhost:5173
 
 ```bash
   git clone https://github.com/Iam-Zarif/eagle-frontend.git
+  cd eagle-frontend
   npm i
   npm run dev
 ```
